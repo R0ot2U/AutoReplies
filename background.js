@@ -51,4 +51,15 @@ chrome.storage.onChanged.addListener((changes, area) => {
   if (area === "local" && changes.options) {
     handleOptionsChanged();
   }
+
+// Listen for the get_session_id message type
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === 'get_session_id') {
+    // Retrieve the sessionId from Salesforce
+    const sessionId = 'YOUR_SESSION_ID';
+    sendResponse({ sessionId });
+  }
+});
+
+  
 });
