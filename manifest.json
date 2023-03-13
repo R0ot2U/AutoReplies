@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "AutoReplies",
+    "version": "1.0",
+    "description": "Automatically reply to Chatter posts in Salesforce",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://*.salesforce.com/*",
+      "https://login.salesforce.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+    }
+  }
+  
