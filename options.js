@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const domain = domainInput.value.trim();
     if (domain !== "" && !domainList.includes(domain)) {
       domainList.push(domain);
-      chrome.storage.local.set({ domainList: domainList });
       domainInput.value = "";
       displayDomains();
     }
@@ -26,16 +25,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const domain = removeButton.dataset.domain;
       const index = domainList.indexOf(domain);
       if (index !== -1) {
-        domainList.splice(index, 1);
-        chrome.storage.local.set({ domainList: domainList });
-        displayDomains();
+        if (confirm(`Are you sure you want to remove ${domain}?`)) {
+          domainList.splice(index, 1);
+          displayDomains();
+        }
       }
     });
   }
+  
 
   const saveChangesButton = document.getElementById("save-changes-button");
   saveChangesButton.addEventListener("click", function () {
-    // handle saving changes here
+    chrome.storage.local.set({ domainList: domainList });
+    const statusElement = document.getElementById("status");
+    statusElement.textContent = "Changes saved.";
+    setTimeout(function () {
+      statusElement.textContent = "";
+    }, 3000);
   });
 });
 
@@ -52,5 +58,16 @@ function displayDomains() {
     removeButton.appendChild(document.createTextNode("Remove"));
     domainItem.appendChild(removeButton);
     domainListElement.appendChild(domainItem);
+    
+    // Add event listener to the newly created remove button
+    removeButton.addEventListener("click", function () {
+      const domain = removeButton.dataset.domain;
+      const index = domainList.indexOf(domain);
+      if (index !== -1) {
+        domainList.splice(index, 1);
+        displayDomains();
+      }
+    });
   }
 }
+

@@ -9,15 +9,16 @@
   <body>
     <h1>Salesforce Session ID Extension Options</h1>
     <form id="options-form">
-      <label for="domain">Salesforce Domain:</label>
+      <label for="domain">Add Domain:</label>
       <input type="text" id="domain" name="domain">
-      <button id="add-domain-button" type="button">Add Domain</button>
-      <div id="saved-domains-container">
-        <h2>Saved Domains:</h2>
-        <ul id="saved-domains-list"></ul>
-      </div>
-      <button id="save-changes-button" type="button">Save Changes</button>
+      <button id="add-domain-button" type="button">Add</button>
     </form>
+    <div id="saved-domains-container">
+      <h2>Saved Domains:</h2>
+      <ul id="saved-domains-list"></ul>
+    </div>
+    <div id="status"></div>
+    <button id="save-changes-button" type="button">Save Changes</button>
+    <script src="options.js"></script>
   </body>
-  <script src="options.js"></script>
 </html>
