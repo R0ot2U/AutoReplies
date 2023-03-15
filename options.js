@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const addButton = document.getElementById("add-button");
-  addButton.addEventListener("click", function () {
-    const domainInput = document.getElementById("domain-input");
+  const addDomainButton = document.getElementById("add-domain-button");
+  addDomainButton.addEventListener("click", function () {
+    const domainInput = document.getElementById("domain");
     const domain = domainInput.value.trim();
     if (domain !== "" && !domainList.includes(domain)) {
       domainList.push(domain);
@@ -32,10 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  const saveChangesButton = document.getElementById("save-changes-button");
+  saveChangesButton.addEventListener("click", function () {
+    // handle saving changes here
+  });
 });
 
 function displayDomains() {
-  const domainListElement = document.getElementById("domain-list");
+  const domainListElement = document.getElementById("saved-domains-list");
   domainListElement.innerHTML = "";
   for (const domain of domainList) {
     const domainItem = document.createElement("li");

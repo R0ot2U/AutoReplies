@@ -46,20 +46,20 @@ function verifySessionId() {
   });
 }
 
-function setStatusMessage(message) {
-  statusElement.textContent = message;
-}
-
 function getSid() {
-  // Get the Salesforce session ID from storage
+  // Get the user's Salesforce session ID from storage
   chrome.storage.sync.get('sessionId', ({ sessionId }) => {
     if (!sessionId) {
-      setStatusMessage('Please authenticate with Salesforce first.');
+      setStatusMessage('Session ID not found.');
       return;
     }
 
-    setStatusMessage(`Salesforce session ID: ${sessionId}`);
+    setStatusMessage(`Current SID: ${sessionId}`);
   });
+}
+
+function setStatusMessage(message) {
+  statusElement.textContent = message;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

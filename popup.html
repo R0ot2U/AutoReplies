@@ -2,13 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>AutoReplies Popup</title>
-    <script src="popup.js"></script>
+    <title>Salesforce Authentication</title>
+    <style>
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+        border: none;
+        background-color: #0077c0;
+        color: white;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #status {
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>AutoReplies Popup</h1>
-    <p id="status"></p>
-    <button id="authenticate">Authenticate with Salesforce</button>
-    <button id="show-sid">Show SID</button>
+    <div>
+      <button id="authenticate">Authenticate</button>
+      <button id="show-sid">Show SID</button>
+    </div>
+    <div id="status"></div>
+    <script src="popup.js"></script>
   </body>
 </html>

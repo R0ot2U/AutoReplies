@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 5px 15px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  button:hover {
+    background-color: #005b9f;
+  }
+  
+  .remove-button {
+    background-color: #ff4136;
+  }
+  
+  .remove-button:hover {
+    background-color: #e11d0e;
+  }
+  
+  #saved-domains-container {
+    margin-top: 30px;
+  }
+  
+  #saved-domains-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #saved-domains-list li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .domain-item {
+    margin-right: 10px;
+  }
+  
+  .save-button-container {
+    margin-top: 20px;
+  }
+  
