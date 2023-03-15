@@ -1,0 +1,14 @@
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #0077c0;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#status {
+  margin-top: 10px;
+}
