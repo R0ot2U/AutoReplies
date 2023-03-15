@@ -1,33 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <meta charset="UTF-8">
   <title>AutoReplies Options</title>
-  <script src="options.js"></script>
   <style>
-    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    input[type="submit"] {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    .domain-list {
+      margin-top: 20px;
+    }
+
+    .domain-list h2 {
+      margin-bottom: 10px;
+    }
+
+    .domain-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .domain-list li {
+      margin-bottom: 5px;
+    }
+
+    .domain-list .delete {
+      font-weight: normal;
+      color: red;
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
   <h1>AutoReplies Options</h1>
+  <form id="domain-form">
+    <label for="domain">Salesforce domain:</label>
+    <input type="text" id="domain-input" name="domain" placeholder="Enter your Salesforce domain">
+    <input type="submit" id="add-button" value="Add Domain">
+  </form>
 
-  <label for="terms">Search terms:</label>
-  <textarea id="terms"></textarea>
+  <div class="domain-list">
+    <h2>Saved domains:</h2>
+    <ul id="domain-list"></ul>
+  </div>
 
-  <br>
-
-  <label for="objects">Objects to search:</label>
-  <select id="objects" multiple>
-    <option value="Case">Case</option>
-    <option value="Work">Work</option>
-  </select>
-
-  <br>
-
-  <label for="reply">Automatic reply:</label>
-  <textarea id="reply"></textarea>
-
-  <br>
-
-  <button id="save">Save</button>
+  <script src="options.js"></script>
 </body>
+
 </html>
