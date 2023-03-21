@@ -8,6 +8,17 @@
   </head>
   <body>
     <h1>Salesforce Session ID Extension Options</h1>
+    <!-- Add the new fields for SObject names, profiles, keywords, and responses -->
+    <label for="sobjects">SObjects:</label>
+    <input type="text" id="sobjects" name="sobjects" placeholder="Case,ADM__Work__c">
+    <label for="profiles">Profiles:</label>
+    <input type="text" id="profiles" name="profiles" placeholder="Profile 1,Profile 2">
+    <label for="keywords">Keywords:</label>
+    <input type="text" id="keywords" name="keywords" placeholder="Keyword 1,Keyword 2">
+    <label for="response">Response:</label>
+    <input type="text" id="response" name="response" placeholder="Your response message">
+    <label for="scanInterval">Scan Interval (in minutes):</label>
+    <input type="number" id="scanInterval" name="scanInterval" min="15" step="1">
     <form id="options-form">
       <label for="domain">Add Domain:</label>
       <input type="text" id="domain" name="domain">

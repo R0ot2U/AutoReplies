@@ -34,15 +34,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
 
-  const saveChangesButton = document.getElementById("save-changes-button");
-  saveChangesButton.addEventListener("click", function () {
-    chrome.storage.local.set({ domainList: domainList });
-    const statusElement = document.getElementById("status");
-    statusElement.textContent = "Changes saved.";
-    setTimeout(function () {
-      statusElement.textContent = "";
-    }, 3000);
+// Save the new options in chrome.storage.local
+const saveChangesButton = document.getElementById("save-changes-button");
+saveChangesButton.addEventListener("click", function () {
+  const sobjects = document.getElementById("sobjects").value.split(',').map(s => s.trim());
+  const profiles = document.getElementById("profiles").value.split(',').map(p => p.trim());
+  const keywords = document.getElementById("keywords").value.split(',').map(k => k.trim());
+  const response = document.getElementById("response").value;
+  const scanInterval = document.getElementById("scanInterval").value;
+  chrome.storage.local.set({ 
+    domainList: domainList, 
+    sobjects: sobjects,
+    profiles: profiles,
+    keywords: keywords,
+    response: response,
+    scanInterval: parseInt(scanInterval, 10)
   });
+  const statusElement = document.getElementById("status");
+  statusElement.textContent = "Changes saved.";
+  setTimeout(function () {
+    statusElement.textContent = "";
+  }, 3000);
+});
 });
 
 function displayDomains() {
